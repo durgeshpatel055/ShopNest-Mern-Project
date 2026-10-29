@@ -25,5 +25,7 @@ const CartSchema = new monoose.Schema({
    items : [cartItemSchema]
 })
 
+// export this Cart
+
 
 export const Cart = monoose.model('Cart', CartSchema);
