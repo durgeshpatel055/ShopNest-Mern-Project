@@ -6,6 +6,7 @@ import mongoose from "mongoose";
 import bodyParser from "express";
 import userRouter from "./Routes/user.js"; 
 import productRouter from "./Routes/product.js";
+import cartRouter from "./Routes/cart.js";
 
 const app = express();
 
@@ -26,6 +27,8 @@ app.use("/api/user", userRouter);
 // product Router
 app.use("/api/product", productRouter);
 
+
+// 
 mongoose
   .connect(
     "mongodb+srv://dfordurgesh05_db_user:4K05Z8uBHuiVg52J@cluster0.rretfgb.mongodb.net/",

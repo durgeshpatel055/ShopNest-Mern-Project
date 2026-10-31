@@ -1,8 +1,8 @@
-import monoose from 'mongoose';
+import mongoose from 'mongoose';
 
 
 
-const cartItemSchema = new monoose.Schema({
+const cartItemSchema = new mongoose.Schema({
   productId: {
     type: monoose.Schema.Types.ObjectId,
     ref: 'Product',
@@ -11,21 +11,18 @@ const cartItemSchema = new monoose.Schema({
   title: {type: String, required: true},
   price: {type: Number, required: true},
   qty: {type: Number, required: true},
-  title: {type: String, required: true},
   imgSrc: {type: String, required: true},
   
 });
 
-const CartSchema = new monoose.Schema({
+const cartSchema = new mongoose.Schema({
   userId: {
-    type: monoose.Schema.Types.ObjectId,
+    type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
-    required: true
+    require: true,
   },
-   items : [cartItemSchema]
-})
-
-// export this Cart
+   items : [cartItemSchema],
+});
 
 
-export const Cart = monoose.model('Cart', CartSchema);
+export const Cart = mongoose.model('Cart', cartSchema);
